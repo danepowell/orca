@@ -341,7 +341,7 @@ class FixtureCreator {
       'acquia/blt-project',
       $this->fixture->getPath(),
     ];
-    if ($this->sut === 'acquia/blt' || $this->isDev) {
+    if ($this->sut->getPackageName() === 'acquia/blt' || $this->isDev) {
       $command[] = '--stability=dev';
     }
     $this->processRunner->runOrcaVendorBin($command);
